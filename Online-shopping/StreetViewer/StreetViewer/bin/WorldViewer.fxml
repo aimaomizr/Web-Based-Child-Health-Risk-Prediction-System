@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="524.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WorldController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="816.0" spacing="5.0">
+         <children>
+            <MenuButton mnemonicParsing="false" text="shopping list">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup" text="share" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup1" text="bread" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup2" text="oat" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup3" text="wine" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup4" text="cookie" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtonup5" text="chocalate" />
+               </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" text="cancel orders">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown" text="share" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown1" text="bread" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown2" text="oat" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown3" text="wine" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown4" text="cookie" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressButtondown5" text="chocalate" />
+               </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="aboutItem" mnemonicParsing="false" onAction="#doAbout" text="About" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="close" />
+               </items>
+            </MenuButton>
+            <ImageView fx:id="music" fitHeight="23.0" fitWidth="26.0" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true" />
+            <MenuButton mnemonicParsing="false" text="Map instruct">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#mapshow" text="map show" />
+                  <MenuItem mnemonicParsing="false" onAction="#mapclose" text="map close" />
+               </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" text="navigation">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#navigateshow" text="na_show" />
+                  <MenuItem mnemonicParsing="false" onAction="#navigateclose" text="na_show" />
+               </items>
+            </MenuButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <SplitPane dividerPositions="0.8217270194986073" VBox.vgrow="ALWAYS">
+         <items>
+            <Pane prefHeight="358.0" prefWidth="587.0">
+               <children>
+                  <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true" scaleY="1.2" scaleZ="0.0">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Pane>
+            <VBox prefHeight="321.0" prefWidth="55.0">
+               <children>
+                  <TitledPane prefHeight="200.0" prefWidth="200.0" text="navigation">
+                     <content>
+                        <GridPane prefHeight="147.0" prefWidth="207.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="67.0" minWidth="10.0" prefWidth="47.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="70.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="118.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <ImageView fx:id="navigate" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ImageView fx:id="imageView4" fitHeight="46.0" fitWidth="52.0" layoutX="169.0" layoutY="69.0" onMouseClicked="#right" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <ImageView fx:id="imageView5" fitHeight="45.0" fitWidth="46.0" layoutX="6.0" layoutY="54.0" onMouseClicked="#last" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imageView3" fitHeight="41.0" fitWidth="47.0" layoutX="87.0" layoutY="58.0" onMouseClicked="#left" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                              <ImageView fx:id="imageView2" fitHeight="43.0" fitWidth="67.0" layoutX="129.0" layoutY="98.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ImageView fx:id="imageView1" fitHeight="41.0" fitWidth="71.0" layoutX="123.0" layoutY="43.0" onContextMenuRequested="#forward" onMouseClicked="#forward" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                              <ImageView fx:id="imageView8" fitHeight="41.0" fitWidth="46.0" layoutX="196.0" layoutY="109.0" onMouseClicked="#Initialise" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <ImageView fx:id="imageView6" fitHeight="41.0" fitWidth="46.0" layoutX="192.0" layoutY="66.0" onMouseClicked="#next" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                              <ImageView fx:id="imageView7" fitHeight="38.0" fitWidth="45.0" layoutX="19.0" layoutY="109.0" onMouseClicked="#endpay" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane animated="false" text="map">
+                     <content>
+                        <Pane>
+                           <children>
+                              <ImageView fx:id="map" pickOnBounds="true" preserveRatio="true" scaleX="0.7" scaleY="0.7" translateX="-50.0" translateY="-30.0" />
+                           </children>
+                        </Pane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane text="buy items">
+                     <content>
+                        <ScrollPane prefViewportHeight="76.0" prefViewportWidth="255.0">
+                           <content>
+                              <HBox>
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <ImageView fx:id="basketView5" fitHeight="51.0" fitWidth="66.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="basketView1" fitHeight="51.0" fitWidth="62.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="basketView2" fitHeight="61.0" fitWidth="64.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="basketView4" fitHeight="52.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="basketView6" fitHeight="54.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fx:id="basketView3" fitHeight="51.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </TitledPane>
+                  <VBox>
+                     <children>
+                        <TitledPane prefHeight="112.0" prefWidth="257.0" text="search price">
+                           <content>
+                              <VBox prefHeight="85.0" prefWidth="214.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <TextField fx:id="input" prefHeight="24.0" prefWidth="129.0" />
+                                          <ImageView fx:id="search" fitHeight="27.0" fitWidth="33.0" onMouseClicked="#searchprice" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <TextField fx:id="output" prefHeight="32.0" prefWidth="235.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane prefHeight="137.0" prefWidth="202.0" text="bill calculation">
+                           <content>
+                              <TextArea fx:id="bill" prefHeight="129.0" prefWidth="255.0" wrapText="true" />
+                           </content>
+                        </TitledPane>
+                        <TextArea fx:id="messageBox" prefHeight="80.0" prefWidth="202.0" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children></VBox>
+         </items>
+      </SplitPane>
+      <HBox alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label text="zoom" />
+            <Button mnemonicParsing="false" onAction="#zoomsmaller" text="-" />
+            <Slider fx:id="slider" onMouseDragOver="#zoomlarge" onMouseDragReleased="#zoomsmaller" />
+            <Button mnemonicParsing="false" onAction="#zoomlarge" text="+" />
+            <TextField fx:id="time" prefHeight="23.0" prefWidth="98.0" />
+            <ImageView fx:id="shizhong" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="shopping time" textFill="#5b26eb" />
+            <TextField fx:id="consumetime1" prefHeight="23.0" prefWidth="85.0" />
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
